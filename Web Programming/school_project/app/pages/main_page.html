@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>PNU STUDY TIMER</title>
+    <link href="{{ url_for('static', path='/styles.css') }}" rel="stylesheet">
+</head>
+<body>
+
+<h1>부산대학교 STUDY TIMER</h1>
+<p>이 웹사이트는 부산대학교 학생들이 혼자 공부할 때 동기부여가 되지 않고 의욕이 저하되는 상황을 보고 공부한 시간을 기록하고 순위를 알려주는 웹사이트를 만들어 동기들의 공부 시간을 알려주고 
+    순위를 매겨 우리 의생명공학부 학생들이 더욱 열심히 공부하기를 바라는 마음으로 기획되였다.</p>
+<h4>로그인</h4>
+    <label for="text_id">id <input type="text" id="text_id"></label><br/>
+    <label for="password_id">pw <input type="password" id="password_id"></label><br/>
+                    
+<h3>학년 페이지</h3>
+Go to <a href="/1st">'1학년'</a><br>
+Go to <a href="/2nd">'2학년'</a><br>
+Go to <a href="/3rd">'3학년'</a><br>
+Go to <a href="/4th">'4학년'</a>
+
+<h3>순위 페이지</h3>
+<a href="/ranking"> 공부시간 순위</a>
+
+<h3>개인 페이지</h3>
+<a href="/personal"> 개인 페이지</a>
+
+
+</body>
+</html>
