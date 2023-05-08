@@ -6,7 +6,7 @@
     <link href="{{ url_for('static', path='/styles.css') }}" rel="stylesheet">
 </head>
 <body>
-<h1>순위 페이지</h1>
+<h1 style="color:blue ; text-align: center">순위 페이지</h1>
 <h3>과목 선택</h3>
 <section>
     <label for="selectbox_id">
@@ -27,6 +27,35 @@
             <option value="s4">1년</option>
         </select><br/>
 </section>
+<section>
+    <h2>학년별 순위</h2>
+    <article>
+        <table border="1">
+            <caption>수학-하루</caption>
+            <thead>
+                <th>순위</th><th>1학년</th><th>2학년</th><th>3학년</th><th>4학년</th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td><td>202355167</td><td>202255134</td><td>202155125</td><td>202055113</td>
+                </tr>
+                <tr>
+                    <td>2</td><td>202355137</td><td>......</td><td>......</td><td>......</td>
+                </tr>
+                <tr>
+                    <td>3</td><td>202355124</td><td>......</td><td>......</td><td>......</td>
+                </tr>
+                <tr>
+                    <td>4</td><td>202355162</td><td>......</td><td>......</td><td>......</td>
+                </tr>
+                <tr>
+                    <td>...</td><td>......</td><td>......</td><td>......</td><td>......</td>
+                </tr>
+            </tbody>
+        </table>
+    </article>
+</section>
+<br><button type="button">내 순위 찾기</button><input type="text"><br/>
 <br><br>
 Go back to <a href="/">'메인 페이지'</a>
 </body>

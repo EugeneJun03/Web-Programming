@@ -6,8 +6,38 @@
     <link href="{{ url_for('static', path='/styles.css') }}" rel="stylesheet">
 </head>
 <body>
-<h1>1학년의 공부 시간</h1>
-Go to <a href="/study_time">'공부시간 입력'</a><br>
-Go back to <a href="/">'메인 페이지'</a>
+<h1 style="color:blue ; text-align: center">1학년의 공부 시간</h1>
+<p style="text-align: center;">Go to <a href="/study_time">'공부시간 입력'</a></p>
+<section>
+    <h2 style="text-align: center;">1학년 순위</h2>
+    <article>
+        <table border="1" style="margin-left:auto;margin-right:auto">
+            <caption>전체 과목 순위</caption>
+            <thead>
+                <th>순위</th><th>1학년</th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td><td>202355167</td>
+                </tr>
+                <tr>
+                    <td>2</td><td>202355137</td>
+                </tr>
+                <tr>
+                    <td>3</td><td>202355124</td>
+                </tr>
+                <tr>
+                    <td>4</td><td>202355162</td>
+                </tr>
+                <tr>
+                    <td>...</td><td>......</td>
+                </tr>
+            </tbody>
+        </table>
+    </article>
+</section>
+<br>
+<br>
+<p style="text-align: center;">Go back to <a href="/">'메인 페이지'</a></p>
 </body>
 </html>
