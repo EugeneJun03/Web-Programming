@@ -5,3 +5,9 @@ body{
   margin: 0 auto;
   width: 600px;
 }
+#text_id {
+  font-size: 15px;
+} 
+#password_id {
+  font-size: 15px;
+}
