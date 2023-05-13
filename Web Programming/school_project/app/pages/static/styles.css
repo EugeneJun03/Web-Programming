@@ -11,3 +11,6 @@ body{
 #password_id {
   font-size: 15px;
 }
+th, td {
+  text-align: center;
+}

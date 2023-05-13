@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>personal info</title>
-    <link href="{{ url_for('static', path='/styles.css') }}" rel="stylesheet">
+    <link href="static/styles.css" rel="stylesheet">
 </head>
 <body>
 <h1 style="color:blue ; text-align: center">당신의 공부량</h1>
@@ -33,6 +33,29 @@
     <button type="button">내 순위 찾기</button><input type="text"><br/>
     </section>
 
+    <table border="1">
+        <caption>나의 공부 기록</caption>
+        <thead>
+            <th>번호</th><th>과목</th><th>공부시간</th>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td><td>과학</td><td>1:30</td>
+            </tr>
+            <tr>
+                <td>2</td><td>수학</td><td>2:00</td>
+            </tr>
+            <tr>
+                <td>3</td><td>영어</td><td>2:00</td>
+            </tr>
+            <tr>
+                <td>4</td><td>...</td><td>...</td>
+            </tr>
+            <tr>
+                <td>...</td><td>...</td><td>...</td>
+            </tr>
+        </tbody>
+    </table>
 <br>
 <br>
 <br>
