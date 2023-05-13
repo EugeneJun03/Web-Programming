@@ -1,16 +1,41 @@
 h1 {
-    color:blue;
+    color:rgb(67, 67, 249);
+    border-bottom: 2px solid #e5e5e5;
     }
 body{
   margin: 0 auto;
-  width: 600px;
+  width: 700px;
 }
 #text_id {
-  font-size: 15px;
+  font-size: 8px;
 } 
 #password_id {
-  font-size: 15px;
+  font-size: 8px;
+}
+
+footer {
+  padding: 0.01rem 0;
+  color: #727272;
+  text-align: center;
+  background-color: #f9f9f9;
+  border-top: .03rem solid #e5e5e5;
+}
+#sc1 {
+  border-bottom: 2px solid #e5e5e5;
+}
+table {
+  width: 65%;
+  border-top: 1px solid #444444;
+  border-collapse: collapse;
 }
 th, td {
+  border-bottom: 1px solid #444444;
+  padding: 10px;
   text-align: center;
+}
+th {
+  background-color: #adb8fa;
+}
+td {
+  background-color: #e5e3fd;
 }
