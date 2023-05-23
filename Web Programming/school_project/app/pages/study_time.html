@@ -6,7 +6,13 @@
     <link href="{{ url_for('static', path='/styles.css') }}" rel="stylesheet">
     <script>
         function test() {
-            if (!confirm("정말로 공부한 시간을 입력하시겠습니까?")) {
+            let g_box = document.getElementById('select_grade_id');
+            let s_box = document.getElementById('select_sub_id');
+            let time_box = document.getElementById('number_id1');
+            let min_box = document.getElementById('number_id2');
+            let text_box = document.getElementById('textarea_id');
+            if (!confirm("정말로 아래 내용을 공부한 시간에 기록하시겠습니까?\n"
+            + g_box.value+"학년  "+s_box.value+"  공부시간:"+time_box.value+"시간"+min_box.value+"분"+"  세부사항:"+text_box.value)) {
                 alert("저장할 내용을 다시 적어 주시오");
             } else {
                 alert("정상적으로 저장되었습니다.");
@@ -22,10 +28,10 @@
     <legend><b>입력</b></legend>
         <label for="select_grade_id">학년:
             <select id="select_grade_id">
-                <option value="s1">1학년</option>
-                <option value="s2">2학년</option>
-                <option value="s3">3학년</option>
-                <option value="s4">4학년</option>
+                <option value="1">1학년</option>
+                <option value="2">2학년</option>
+                <option value="3">3학년</option>
+                <option value="4">4학년</option>
             </select>
         </label>
     
@@ -34,14 +40,14 @@
     
         <label for="select_sub_id">공부 과목:
             <select id="select_sub_id">
-                <option value="s1">수학</option>
-                <option value="s2">과학</option>
-                <option value="s3">프로그래밍</option>
-                <option value="s4">영어</option>
+                <option value="수학">수학</option>
+                <option value="과학">과학</option>
+                <option value="프로그래밍">프로그래밍</option>
+                <option value="영어">영어</option>
             </select><br/>
         </label>
         <br>
-        <label for="number_id">공부시간 <input type="number" id="number_id">시간 <input type="number" id="number_id">분
+        <label for="number_id1">공부시간 <input type="number" id="number_id1">시간 <input type="number" id="number_id2">분
         </label>
         <br>
         <br>
