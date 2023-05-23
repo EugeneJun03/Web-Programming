@@ -5,7 +5,21 @@
     <title>PNU STUDY TIMER</title>
     <link href="{{ url_for('static', path='/styles.css') }}" rel="stylesheet">
     <script>
-        //이곳에 자바 스크립트를 사용하여라 
+        function printName()  {
+            const text_id = document.getElementById('text_id').value;
+            document.getElementById("result").innerText = text_id;
+        }
+        function sayhello() {
+            let text_box = document.getElementById('text_id');
+            let pw_box = document.getElementById('password_id');
+            if(text_box !== null){
+                alert(text_box.value + "님 로그인을 환영합니다!")
+            }else if(password_id !== null){
+                alert("ID와 PW를 모두 입력하여 주시오")
+            }else{
+                alert("ID와 PW를 모두 입력하여 주시오")
+            }
+        }
     </script>
 </head>
 
@@ -18,10 +32,11 @@
     순위를 매겨 <br>우리 의생명공학부 학생들이 더욱 열심히 공부하기를 바라는 마음으로 기획되었다.</p>
     <h5 style="text-align: right;">[로그인]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h5>
     <p style="text-align: right;">
-    <label for="text_id">ID &nbsp;&nbsp;<input type="text" id="text_id" name="id"></label><br/>
+    <label for="text_id">ID &nbsp;&nbsp;<input type="text" id="text_id" name="id" onkeyup='printName()'></label><br/>
     <label for="password_id">PW <input type="password" id="password_id" name="pw"></label><br/>
-    <input type="submit">
+    <input type="submit" onclick="sayhello()">
     </p>
+    <p style="text-align: center;"><b>환영합니다!</b></p><div id='result' style="text-align: center;"></div>
 </section>
 <hr>
 <section id="sc2" style="text-align: center;">
