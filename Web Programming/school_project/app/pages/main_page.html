@@ -12,9 +12,9 @@
         function sayhello() {
             let text_box = document.getElementById('text_id');
             let pw_box = document.getElementById('password_id');
-            if(text_box !== null){
+            if(text_box !== null && text_box !== undefined){
                 alert(text_box.value + "님 로그인을 환영합니다!")
-            }else if(password_id !== null){
+            }else if(pw_box !== null && pw_box !== undefined){
                 alert("ID와 PW를 모두 입력하여 주시오")
             }else{
                 alert("ID와 PW를 모두 입력하여 주시오")
