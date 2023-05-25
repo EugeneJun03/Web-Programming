@@ -4,19 +4,28 @@
     <meta charset="UTF-8">
     <title>공부시간 입력</title>
     <link href="{{ url_for('static', path='/styles.css') }}" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    
     <script>
-        function test() {
-            let g_box = document.getElementById('select_grade_id');
-            let s_box = document.getElementById('select_sub_id');
-            let time_box = document.getElementById('number_id1');
-            let min_box = document.getElementById('number_id2');
-            let text_box = document.getElementById('textarea_id');
-            if (!confirm("정말로 아래 내용을 공부한 시간에 기록하시겠습니까?\n"
-            + g_box.value+"학년  "+s_box.value+"  공부시간:"+time_box.value+"시간"+min_box.value+"분"+"  세부사항:"+text_box.value)) {
-                alert("저장할 내용을 다시 적어 주시오");
-            } else {
-                alert("정상적으로 저장되었습니다.");
+        window.onload=function(){
+            document.getElementById("btn_submit").onclick=function(){
+                let g_box = document.getElementById('select_grade_id');
+                let s_box = document.getElementById('select_sub_id');
+                let time_box = document.getElementById('number_id1');
+                let min_box = document.getElementById('number_id2');
+                let text_box = document.getElementById('textarea_id');
+                date=new Date().toISOString()
+
+                console.log(date)
+                console.log(g_box.value,"학년")
+                console.log(s_box.value)
+                console.log(time_box.value,"시간", min_box.value,"분")
+                console.log("세부사항:", text_box.value)
+                if (!confirm("정말로 아래 내용을 공부한 시간에 기록하시겠습니까?\n"
+                + g_box.value+"학년  "+s_box.value+"  공부시간:"+time_box.value+"시간"+min_box.value+"분"+"  세부사항:"+text_box.value)) {
+                    alert("저장할 내용을 다시 적어 주시오");
+                } else {
+                    alert("정상적으로 저장되었습니다.");
+            }
             }
         }
     </script>
@@ -56,7 +65,7 @@
         <textarea cols="80" rows="3" id="textarea_id"></textarea>
 </fieldset>
     <br>
-    <input type="submit" onclick="test()">
+    <input type="submit" id ="btn_submit">
 
 <br>
 <br>
