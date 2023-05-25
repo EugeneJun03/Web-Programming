@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko"> <!--변경-->
+<head>
+    <meta charset="UTF-8">
+    <!--<META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+    <META HTTP-EQUIV="Expires" CONTENT="-1">-->
+    <title>원서 조회</title>
+    <link href="{{ url_for('static', path='/styles.css') }}" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+        window.onload=function(){
+            num=location.pathname.split('/').reverse()[0]
+            axios.get('/api/admission/application/'+num)
+                .then(function(response) {
+                    detailed_view_t=document.getElementById("detailed_view")
+                    result=response.data.result
+                    div_title_t=document.createElement("div")
+                    h_title_t=document.createElement("h2")
+                    h_title_t.textContent="원서 제목"
+                    p_title_t=document.createElement("p")
+                    p_title_t.textContent=result.title
+                    div_title_t.appendChild(h_title_t)
+                    div_title_t.appendChild(p_title_t)
+
+                    div_time_t=document.createElement("div")
+                    h_time_t=document.createElement("h2")
+                    h_time_t.textContent="원서 작성 시간"
+                    p_time_t=document.createElement("p")
+                    p_time_t.textContent=new Date(result.time).toLocaleString()
+                    div_time_t.appendChild(h_time_t)
+                    div_time_t.appendChild(p_time_t)
+
+                    div_subjects_t=document.createElement("div")
+                    h_subjects_t=document.createElement("h2")
+                    h_subjects_t.textContent="선택한 과목"
+                    p_subjects_t=document.createElement("p")
+                    p_subjects_t.textContent=result.subjects.join(" / ")
+                    div_subjects_t.appendChild(h_subjects_t)
+                    div_subjects_t.appendChild(p_subjects_t)
+                                            
+                    detailed_view_t.appendChild(div_title_t)
+                    detailed_view_t.appendChild(div_time_t)
+                    detailed_view_t.appendChild(div_subjects_t)
+                }).catch(function(error){
+                    console.log(error)
+                });
+
+                document.getElementById("mod_btn").onclick=function(){
+                    location.href="/modifying_application/"+num
+                }
+                
+                document.getElementById("del_btn").onclick=function(){
+                    if(confirm("지원서를 삭제하시겠습니까?")==true){
+                        axios.delete('/api/admission/application/'+num)
+                            .then(function(response) {
+                                alert("성공적으로 삭제되었습니다.")
+                                location.href="/"
+                            }).catch(function(){
+                                console.log(error)
+                            });
+                    }
+                }
+        }
+        
+    </script>
+    <style>
+        #application_list, #application_list th, #application_list td{
+            border : 1px solid black;
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+<body>
+    <h1>원서 상세 조회</h1>
+    <a href="/">원서 조회하기</a>
+    <div id="detailed_view">
+
+    </div>
+    <button type="button" id="mod_btn">수정</button>
+    <button type="button" id="del_btn">삭제</button>
+</body>
+</html>
